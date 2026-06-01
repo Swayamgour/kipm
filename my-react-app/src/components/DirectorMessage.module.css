@@ -1,0 +1,466 @@
+/* components/DirectorMessage.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+.director {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background Elements */
+.bgElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.gradientBg {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.particle1, .particle2, .particle3, .particle4 {
+  position: absolute;
+  background: linear-gradient(135deg, #60a5fa, #c084fc);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 20s infinite ease-in-out;
+}
+
+.particle1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.particle2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 2s;
+}
+
+.particle3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 10%;
+  animation-delay: 4s;
+}
+
+.particle4 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  padding: 3rem 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+  pointer-events: none;
+}
+
+/* Quote Icons */
+.quoteWrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.quoteIconLeft,
+.quoteIconRight {
+  font-size: 3rem;
+  color: rgba(59,130,246,0.3);
+  position: absolute;
+}
+
+.quoteIconLeft {
+  top: -20px;
+  left: -20px;
+}
+
+.quoteIconRight {
+  bottom: -20px;
+  right: -20px;
+  transform: rotate(180deg);
+}
+
+/* Message */
+.message {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+}
+
+.imageBorder {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageWrapper:hover .imageBorder {
+  opacity: 1;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  border: 3px solid rgba(59,130,246,0.3);
+  transition: all 0.3s ease;
+}
+
+.imageWrapper:hover img {
+  border-color: #3b82f6;
+}
+
+.socialLinks {
+  position: absolute;
+  bottom: 10px;
+  right: -20px;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.socialLink {
+  width: 35px;
+  height: 35px;
+  background: #1e293b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.socialLink:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.profileInfo {
+  text-align: center;
+}
+
+.profileInfo h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.designation {
+  color: #60a5fa;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.qualifications {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.qualifications span {
+  background: rgba(59,130,246,0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Achievements */
+.achievements {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.achievementItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255,255,255,0.05);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.achievementIcon {
+  font-size: 1.3rem;
+  color: #60a5fa;
+}
+
+.achievementValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.achievementLabel {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* Signature */
+.signature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.signatureLine {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.signatureText {
+  text-align: center;
+}
+
+.signatureText span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.signatureText small {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .director {
+    padding: 5rem 1.5rem;
+  }
+  
+  .content {
+    padding: 2rem;
+  }
+  
+  .message {
+    font-size: 1.1rem;
+  }
+  
+  .profileInfo h4 {
+    font-size: 1.5rem;
+  }
+  
+  .profileSection {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem;
+  }
+  
+  .quoteIconLeft,
+  .quoteIconRight {
+    font-size: 2rem;
+  }
+  
+  .quoteIconLeft {
+    top: -10px;
+    left: -10px;
+  }
+  
+  .quoteIconRight {
+    bottom: -10px;
+    right: -10px;
+  }
+  
+  .message {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .profileSection {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .imageWrapper {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profileInfo h4 {
+    font-size: 1.3rem;
+  }
+  
+  .qualifications {
+    gap: 0.5rem;
+  }
+  
+  .qualifications span {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .achievements {
+    gap: 1rem;
+  }
+  
+  .achievementItem {
+    padding: 0.5rem 1rem;
+  }
+  
+  .achievementIcon {
+    font-size: 1rem;
+  }
+  
+  .achievementValue {
+    font-size: 0.9rem;
+  }
+  
+  .signature {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .director {
+    padding: 4rem 1rem;
+  }
+  
+  .content {
+    padding: 1.2rem;
+  }
+  
+  .message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .achievements {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .achievementItem {
+    justify-content: center;
+  }
+  
+  .socialLinks {
+    right: -10px;
+    bottom: 5px;
+  }
+  
+  .socialLink {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+}

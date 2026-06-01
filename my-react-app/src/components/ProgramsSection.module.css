@@ -1,0 +1,388 @@
+/* components/ProgramsSection.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.programs {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Background Pattern */
+.bgPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.patternDot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #3b82f6;
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.patternDot:nth-child(1) { top: 10%; left: 5%; width: 6px; height: 6px; }
+.patternDot:nth-child(2) { top: 20%; right: 10%; width: 8px; height: 8px; opacity: 0.08; }
+.patternDot:nth-child(3) { bottom: 15%; left: 15%; width: 5px; height: 5px; }
+.patternDot:nth-child(4) { bottom: 25%; right: 20%; width: 10px; height: 10px; opacity: 0.06; }
+.patternDot:nth-child(5) { top: 50%; left: 8%; width: 4px; height: 4px; }
+.patternDot:nth-child(6) { top: 70%; right: 12%; width: 7px; height: 7px; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #2563eb;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #3b82f6, #2563eb, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.headingUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease-out;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80px;
+    opacity: 1;
+  }
+}
+
+.subheading {
+  color: #64748b;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Program Card Styles */
+.programCard {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.programCard:hover .cardGlow {
+  transform: scaleX(1);
+}
+
+.cardContent {
+  padding: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.programCard:hover .iconWrapper {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.programInfo h4 {
+  color: #1e293b;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.programMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.metaIcon {
+  font-size: 0.8rem;
+  color: #3b82f6;
+}
+
+.metaItem strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.accreditationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.accreditationIcon {
+  font-size: 0.7rem;
+}
+
+.applyBtn {
+  margin-top: 1.2rem;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.programCard:hover .applyBtn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.applyBtn svg {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.applyBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* View All Button */
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.viewAllBtn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.viewAllBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.viewAllBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Left Column Animation Delay */
+.column:first-child .programCard:nth-child(1) { transition-delay: 0s; }
+.column:first-child .programCard:nth-child(2) { transition-delay: 0.1s; }
+.column:first-child .programCard:nth-child(3) { transition-delay: 0.2s; }
+
+.column:last-child .programCard:nth-child(1) { transition-delay: 0.15s; }
+.column:last-child .programCard:nth-child(2) { transition-delay: 0.25s; }
+.column:last-child .programCard:nth-child(3) { transition-delay: 0.35s; }
+
+/* Hover Effects for Cards */
+.programCard:hover {
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+  }
+  
+  .subheading {
+    font-size: 1rem;
+  }
+  
+  .cardContent {
+    padding: 1.5rem;
+  }
+  
+  .applyBtn {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .programs {
+    padding: 4rem 1.5rem;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+  
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 14px;
+  }
+  
+  .programInfo h4 {
+    font-size: 1rem;
+  }
+  
+  .programMeta {
+    gap: 0.8rem;
+  }
+  
+  .metaItem {
+    font-size: 0.75rem;
+  }
+  
+  .accreditationBadge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .viewAllBtn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    padding: 1.2rem;
+  }
+  
+  .programMeta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
