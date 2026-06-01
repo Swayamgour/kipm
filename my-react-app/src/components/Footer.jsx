@@ -153,6 +153,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            
 
             {/* Social Links */}
            
