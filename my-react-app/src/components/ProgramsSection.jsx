@@ -253,7 +253,7 @@ const ProgramsSection = () => {
                     </div>
                 </div>
 
-                <motion.div
+                {/* <motion.div
                     className={styles.viewAllWrapper}
                     variants={itemVariants}
                     initial="hidden"
@@ -266,7 +266,7 @@ const ProgramsSection = () => {
                     >
                         View All Programs <FaArrowRight />
                     </motion.button>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );

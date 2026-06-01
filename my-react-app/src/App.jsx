@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -27,7 +26,12 @@ function App() {
       <StudentBenefits />
       <CampusAmenities />
       <FaqSection />
-      <AdmissionForm />
+
+      {/* Scroll Target */}
+      <div id="admission-form">
+        <AdmissionForm />
+      </div>
+
       <ContactSection />
       <Footer />
       <StickyButton />

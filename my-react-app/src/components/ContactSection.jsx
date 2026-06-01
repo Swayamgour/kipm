@@ -55,8 +55,8 @@ const ContactSection = () => {
     { 
       icon: <FaMapMarkerAlt />, 
       title: 'Campus Address', 
-      value: 'Sector 62, Noida, UP',
-      fullValue: 'Sector 62, Noida, Uttar Pradesh - 201301',
+      value: ' GIDA, Gorakhpur, Uttar Pradesh — 273209',
+      fullValue: 'KIPM College of Engineering & Technology, GIDA, Gorakhpur, Uttar Pradesh — 273209',
       subtitle: 'Get directions',
       bg: '#f59e0b',
       gradient: 'linear-gradient(135deg, #f59e0b, #d97706)',
@@ -285,8 +285,9 @@ const ContactSection = () => {
               </div>
               <div className={styles.mapWrapper}>
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.3333333333335!2d77.359669!3d28.581234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5f3b3b3b3b3%3A0x3b3b3b3b3b3b3b3b!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.803247121525!2d83.26731217521812!3d26.741101976749835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399147484fce688b%3A0x81196201753b1789!2sKIPM-College%20of%20Engineering%20and%20Technology!5e1!3m2!1sen!2sin!4v1780318311201!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
                   width="100%" 
+                
                   height="100%" 
                   style={{ border: 0 }}
                   allowFullScreen=""

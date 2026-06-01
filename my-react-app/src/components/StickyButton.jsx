@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight, FaTimes, FaWhatsapp, FaPhoneAlt, FaEnvelope, FaGraduationCap, FaRocket } from 'react-icons/fa';
 import styles from './StickyButton.module.css';
+import { scrollToAdmission } from './scrollToAdmission';
 
 const StickyButton = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -233,6 +234,7 @@ const StickyButton = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={!isExpanded ? pulseAnimation : {}}
+            onClick={scrollToAdmission}
           >
             <div className={styles.buttonContent}>
               <FaGraduationCap className={styles.buttonIcon} />
@@ -242,7 +244,7 @@ const StickyButton = () => {
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity, delay: 2 }}
               >
-                2024
+                2026
               </motion.div>
             </div>
             <FaArrowRight className={`${styles.arrowIcon} ${isExpanded ? styles.rotated : ''}`} />

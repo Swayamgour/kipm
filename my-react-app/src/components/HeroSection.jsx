@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { FaUsers, FaBuilding, FaChartLine, FaArrowRight, FaPhoneAlt } from 'react-icons/fa';
 import styles from './HeroSection.module.css';
+import { scrollToAdmission } from './scrollToAdmission';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -154,6 +155,7 @@ const HeroSection = () => {
               className={styles.btnPrimary}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={scrollToAdmission}
             >
               Apply Now <FaArrowRight className={styles.btnIcon} />
             </motion.button>

@@ -129,42 +129,9 @@ const Footer = () => {
           </motion.div>
 
           {/* Column 2 - Quick Links */}
-          <motion.div className={styles.footerColumn} variants={itemVariants}>
-            <h4>Quick Links</h4>
-            <ul className={styles.linksList}>
-              {quickLinks.map((link, idx) => (
-                <motion.li 
-                  key={idx}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <a href={link.url}>
-                    <span className={styles.linkIcon}>{link.icon}</span>
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
+        
           {/* Column 3 - Important Links */}
-          <motion.div className={styles.footerColumn} variants={itemVariants}>
-            <h4>Important Info</h4>
-            <ul className={styles.linksList}>
-              {importantLinks.map((link, idx) => (
-                <motion.li 
-                  key={idx}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <a href={link.url}>
-                    <FaShieldAlt className={styles.linkIcon} />
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+        
 
           {/* Column 4 - Contact Info */}
           <motion.div className={styles.footerColumn} variants={itemVariants}>
@@ -188,24 +155,7 @@ const Footer = () => {
             </ul>
 
             {/* Social Links */}
-            <div className={styles.socialSection}>
-              <h5>Follow Us</h5>
-              <div className={styles.socialLinks}>
-                {socialLinks.map((social, idx) => (
-                  <motion.a
-                    key={idx}
-                    href={social.url}
-                    className={styles.socialLink}
-                    style={{ background: `${social.color}15`, color: social.color }}
-                    whileHover={{ scale: 1.1, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+           
           </motion.div>
         </motion.div>
 
